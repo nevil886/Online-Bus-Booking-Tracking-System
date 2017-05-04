@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+				<TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="@string/tracking_system"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+               <TextView
+	                android:id="@+id/textView1"
+	                android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+	                android:text="@string/bus_number"
+	                android:textAppearance="?android:attr/textAppearanceLarge" />
+               <TextView
+			        android:id="@+id/textView3"
+			        android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="-50dp"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+			        android:text="@string/bno"
+			        android:textAppearance="?android:attr/textAppearanceLarge" />
+               <TextView
+	                android:id="@+id/textView2"
+	                android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+	                android:text="@string/journey_number"
+	                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+               <TextView
+                   android:id="@+id/textView6"
+                   android:layout_width="wrap_content"
+                   android:layout_height="50dp"
+                    android:layout_marginTop="-50dp"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                   android:text="@string/jno"
+                   android:textAppearance="?android:attr/textAppearanceLarge" />
+               
+           		<Button
+            	    android:id="@+id/button2"
+            	    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+            	    android:text="@string/runing" />
+
+           		<Button
+           		    android:id="@+id/button6"
+           		    android:layout_width="120dp"
+           		    android:layout_height="50dp"
+           		    android:layout_marginLeft="190dp"
+           		    android:layout_marginRight="10dp"
+           		    android:layout_marginTop="-50dp"
+           		    android:gravity="center"
+           		    android:text="@string/waiting" />
+
+			    <Button
+	                android:id="@+id/button4"
+	                android:layout_width="120dp"
+           		    android:layout_height="50dp"
+           		    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+	                android:text="@string/breakdown" />
+
+			    <Button
+			        android:id="@+id/button5"
+			        android:layout_width="120dp"
+			        android:layout_height="50dp"
+			        android:layout_marginLeft="190dp"
+			        android:layout_marginRight="10dp"
+			        android:layout_marginTop="-50dp"
+			        android:gravity="center"
+			        android:text="@string/stop" />
+
+			    <ProgressBar
+			        android:id="@+id/progressBar2"
+			        style="?android:attr/progressBarStyleLarge"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="125dp"
+           		    android:layout_marginRight="10dp"
+           		    android:layout_marginTop="0dp"
+           		    android:layout_marginBottom="0dp"
+           		    android:gravity="center"/>
+
+			    <Button
+			        android:id="@+id/button1"
+			       	android:layout_width="120dp"
+           		    android:layout_height="50dp"
+           		    android:layout_marginLeft="190dp"
+           		    android:layout_marginRight="10dp"
+           		    android:layout_marginTop="20dp"
+           		    android:layout_marginBottom="50dp"
+           		    android:gravity="center"
+           		    android:text="@string/exit" />
+
+			    <TextView
+			        android:id="@+id/textView4"
+			        android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+			        android:text="@string/booked_seat"
+			        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+			    <DatePicker
+			        android:id="@+id/datePicker1"
+			        android:layout_width="300dp"
+			        android:layout_height="120dp"
+			        android:layout_marginBottom="10dp"
+			        android:layout_marginLeft="10dp"
+			        android:layout_marginRight="10dp"
+			        android:layout_marginTop="10dp"
+			        android:gravity="center" />
+
+			    <Button
+			        android:id="@+id/button3"
+			        android:layout_width="120dp"
+           		    android:layout_height="50dp"
+           		    android:layout_marginLeft="190dp"
+           		    android:layout_marginRight="10dp"
+           		    android:layout_marginTop="0dp"
+           		    android:layout_marginBottom="50dp"
+           		    android:gravity="center"
+			        android:text="@string/view_seat" />
+           
+    </LinearLayout>
+    
+   </ScrollView> 
+   
+   <!-- android:background="@android:color/black"
+           		    android:textColor="@android:color/white" -->

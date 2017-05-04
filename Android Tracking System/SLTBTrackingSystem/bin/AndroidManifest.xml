@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sltbtrackingsystem"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <!-- Set Permission to Access GPS(Location Service) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Set Permission to Access Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Set Permission to Access ACCESS_NETWORK_STATE -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Set first load Activity // MainActivity -->
+        <activity
+            android:name="com.sltbtrackingsystem.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Set Second load Activity -->
+        <activity
+            android:name="com.sltbtrackingsystem.TrackingActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.sltbtrackingsystem.SeatActivity"
+            android:label="@string/title_activity_seat" >
+        </activity>
+    </application>
+
+</manifest>

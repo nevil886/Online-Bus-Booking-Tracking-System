@@ -1,0 +1,173 @@
+#area{	
+    height:300px;	 
+    width:550px;
+    background-color:#F5F5F5;
+    padding: 10px;
+    float: left;
+    margin-left:0px;
+    margin-top:10px;
+    margin-bottom:10px;	
+}
+#viweSeat{	
+    height: 350px;
+    width: 550px;
+    padding: 10px;
+    float: left;
+    margin-left: -10px;
+    margin-top: -35px;
+    margin-bottom: 10px;	
+}
+#timeOutArea{	
+     background-color:#F5F5F5;
+  float:left;
+  height:30px;
+  margin-bottom:10px;
+  margin-left:0;
+  margin-top:0;
+  padding:0;
+  width:570px;	
+}
+#area_selected_seat{	
+    height: 250px;
+    width: 200px;
+    background-color: #F5F5F5;
+    float: right;
+    margin:10px;
+}
+#imgseate{	
+    padding: 5px;
+    float: left;
+    margin:10px;	
+}
+#holder{	
+    height:220px;	 
+    width:530px;
+    background-color:#F5F5F5;
+    border:1px solid #A4A4A4;
+    margin-left:10px;
+    margin-top:50px;
+}
+#print{	
+    height:10px;	 
+    width:530px;
+    padding: 0px;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+
+
+#timeOut{	
+    height: 10px;
+    width: 500px;
+    padding: 0px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#place {
+    position:relative;
+    margin:7px;
+}
+#place a{
+    font-size:0.6em;
+}
+#place li
+{
+    list-style: none outside none;
+    position: absolute;   
+}    
+#place li:hover
+{
+    background-color:yellow;      
+} 
+#place .seat,#place .selectedSeat,#place .pendingSeat{
+    height:40px;
+    width:40px;
+    display:block;
+    border: solid 1px #ccc;	
+    /*border:none; */
+    position:absolute;
+}
+#place .seat{
+    background:url("../../images/booker/available_seat_img.gif") no-repeat scroll 0 0 transparent;
+
+}
+#place .selectedSeat
+{ 
+    background:url("../../images/booker/booked_seat_img.gif") no-repeat scroll 0 0 transparent;;      	 
+}
+#place .pendingSeat
+{ 
+    background:url("../../images/booker/pending_seat_img.gif") no-repeat scroll 0 0 transparent;;      	 
+}
+#place .selectingSeat
+{ 
+    background-image:url("../../images/booker/selected_seat_img.gif");      	 
+}
+
+#place .hidingSeats
+{ 
+    display:none; 
+    background-image:url("images/hide_seat_img.gif");
+
+}
+
+/*    #place .row-3, #place .row-4{
+        margin-top:10px;
+    }*/
+#seatDescription{
+    padding:0px;
+}
+#seatDescription li{
+    verticle-align:middle;	  
+    list-style: none outside none;
+    padding-left:40px;
+    height:35px;
+    float:left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#a_seat{ 
+    background: url('../../images/booker/available_seat_img.gif') no-repeat scroll 0 0 transparent;      	 
+}
+
+#b_seat{ 
+    background:url('../../images/booker/booked_seat_img.gif') no-repeat scroll 0 0 transparent;      	 
+}
+
+#s_seat{ 
+    background:url('../../images/booker/selected_seat_img.gif') no-repeat scroll 0 0 transparent;      	 
+}
+#h_seat{ 
+    background:url('../../images/booker/pending_seat_img.gif') no-repeat scroll 0 0 transparent;      	 
+}
+
+#selecting_seate_for_booker{ 
+    width: 155px; 
+    min-width:155px; 
+    max-width:155px; 
+
+    height:75px; 
+    min-height:75px;  
+    max-height:75px;
+}
+
+/*#passenger_info_m{	
+height: 300px;
+width: 350px;
+padding: 10px;
+float: left;
+margin-left: -280px;
+margin-top: 100px;
+margin-bottom: 10px;	
+}
+#booker_info{	
+   height: 200px;
+width: 775px;
+padding: 10px;
+float: left;
+margin-left: -370px;
+margin-top: 190px;
+margin-bottom: 10px;	
+}*/

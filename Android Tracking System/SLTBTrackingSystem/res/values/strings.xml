@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TrackingSystem</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="bus_tracking_system">Bus Tracking System</string>
+    <string name="user_name">User Name</string>
+    <string name="login">Login</string>
+    <string name="exit">Exit</string>
+    <string name="tracking_system">Tracking System</string>
+    <string name="bus_number">Bus Number</string>
+    <string name="journey_number">Journey Number</string>
+    <string name="runing">Runing</string>
+    <string name="waiting">Waiting</string>
+    <string name="breakdown">Breakdown</string>
+    <string name="stop">Stop</string>
+    <string name="password">Password</string>
+    <string name="booked_seat">Booked Seat</string>
+    <string name="bno">bNo</string>
+    <string name="jno">jNo</string>
+    <string name="view_seat">View Seat</string>
+    <string name="title_activity_seat">SeatActivity</string>
+
+</resources>

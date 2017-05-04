@@ -1,0 +1,39 @@
+DROP event expires_booking_seat_delete
+-------------------------------------------
+SET GLOBAL event_scheduler = 1;
+------------------------------------------
+create event expires_booking_seat_delete
+on SCHEDULE EVERY 60 second
+do 
+
+DELETE FROM available_seat WHERE (UTC_time()>addtime(time,'00:11:00') AND status="P")
+
+------------------------------------------
+
+create event expires_booking_ticke_delete
+on SCHEDULE EVERY 60 second
+do 
+
+DELETE FROM booking WHERE (UTC_time()>s_bookin_time AND payment_status="P")
+
+
+** user for UTC_time() => Now()
+
+SMS Gateway
+------------------------------------------
+http://www.ozekisms.com/c-sharp-sms-api/index.php?owpn=327
+https://www.parse.com
+https://developers.google.com/maps/
+
+
+Time zone settings
+php.ini
+[Date]
+; Defines the default timezone used by the date functions
+; http://php.net/date.timezone
+date.timezone = Asia/Colombo
+
+
+**
+set time_zone = '+05:30';
+SELECT now()

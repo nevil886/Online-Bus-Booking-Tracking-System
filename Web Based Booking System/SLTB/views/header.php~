@@ -1,0 +1,111 @@
+<html>
+    <head>
+      
+        <title>OFFSHORE SURVEYING (PVT) LTD</title>
+        <script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.js"></script>
+         <script type="text/javascript" src="<?php echo URL; ?>public/js/allround.js"></script>
+        <script type="text/javascript" src="<?php echo URL; ?>public/js/jquery-ui-1.8.22.custom.min.js"></script>
+        <script type="text/javascript" src="<?php echo URL; ?>public/js/job.js"></script>
+        <script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="<?php echo URL; ?>public/js/table.js"></script>
+        <link rel="stylesheet" href="<?php echo URL; ?>public/css/default.css"/>
+        
+        
+        <?php
+        if (isset($this->js)) {
+            foreach ($this->js as $js) {
+               // echo '<script type="text/javascript" src="'.URL.'views/'.$js .'"></script>';
+                echo '<script type="text/javascript" src="'.URL.$js .'"></script>';
+                
+            }
+        }
+        ?>  
+       
+        
+    </head>
+    <body>
+        <?php Session::init(); ?>
+		<div id="pagewrapper" class="container_12">
+                    <div id="wrapper" class="grid_12 glassborder">
+        <header >
+            <div id="header_img"></div>
+		
+				<div class="menu-header">
+				<ul >                                       
+                                    
+					<?php if (Session::get('loggedIn') == true): ?>
+                                        <li><?php echo 'Loged In ' . Session::get('name'); ?> </li>
+					<li><a href="<?php echo URL; ?>dashboard/logout">logout</a></li>   
+					<?php endif; ?>
+                                         <li><a href="<?php echo URL; ?>help">Help</a></li>
+                                </ul>  
+                                </div>
+            <div class="clear"></div>
+                                    <nav> 
+                                        <div id="main-menu">   
+                                            
+                                            <ul>
+                                            <?php if (Session::get('logType') == 'A'): ?>                                               
+                                                <li><a href="<?php echo URL; ?>administrator">Home</a></li>
+                                                <li><a href="<?php echo URL; ?>administrator/register/">Register </a></li>                                                
+                                                <li><a href="<?php echo URL; ?>administrator/loginCreateChange/">New Login/Modify </a></li>                                              
+                                                <li><a href="<?php echo URL; ?>administrator/jobAssign/">Assign Job </a></li>
+                                                <li><a href="<?php echo URL; ?>administrator/research/">Research </a></li>
+                                                <li> <a href="<?php echo URL; ?>administrator/testing/">Testing </a></li>
+                                                <li><a href="<?php echo URL; ?>administrator/job/">Jobs </a></li>
+                                                <li> <a href="<?php echo URL; ?>administrator/drawing/">Drawing </a></li>
+                                                <li> <a href="<?php echo URL; ?>administrator/modify/">Modify </a></li>
+                                                
+                                            <?php elseif (Session::get('logType') == 'M'): ?>
+                                                <li><a href="<?php echo URL; ?>manager">Home</a></li>  
+                                                <?php if (Session::get('job') == 'T'): ?> <li><a href="<?php echo URL; ?>manager/job/">Display Job</a></li><?php endif; ?>
+                                                <li><a href="<?php echo URL; ?>manager/loginCreateChange/">Privilege/Modify</a></li>
+                                                <?php if (Session::get('jobAssign') == 'T'): ?> <li><a href="<?php echo URL; ?>manager/jobAssign/">Assign Job </a></li><?php endif; ?>
+                                                <?php if (Session::get('research') == 'T'): ?> <li><a href="<?php echo URL; ?>manager/research/">Research </a></li><?php endif; ?>
+                                                <?php if (Session::get('testing') == 'T'): ?> <li><a href="<?php echo URL; ?>manager/testing/">Testing </a></li><?php endif; ?>
+                                                <?php if (Session::get('drawing') == 'T'): ?> <li><a href="<?php echo URL; ?>manager/drawing/">Drawing </a></li><?php endif; ?>
+                                                <?php if (Session::get('modify') == 'T'): ?> <li><a href="<?php echo URL; ?>manager/modify/">Modify </a></li><?php endif; ?>
+                                                
+                                             <?php elseif (Session::get('logType') == 'T'): ?>
+                                                <li><a href="<?php echo URL; ?>technicalOfficer">Home</a></li>
+                                                <?php if (Session::get('job') == 'T'): ?> <li><a href="<?php echo URL; ?>technicalOfficer/job/">Display Job</a></li><?php endif; ?>
+                                                <li><a href="<?php echo URL; ?>technicalOfficer/loginCreateChange/">Modify Password </a></li>                                              
+                                                <?php if (Session::get('jobAssign') == 'T'): ?><li><a href="<?php echo URL; ?>technicalOfficer/jobAssign/">Assign Job </a></li> <?php endif; ?>
+                                                <?php if (Session::get('modify') == 'T'): ?> <li><a href="<?php echo URL; ?>technicalOfficer/modify/">Modify </a></li><?php endif; ?>
+                                               <?php if (Session::get('research') == 'T'): ?> <li><a href="<?php echo URL; ?>technicalOfficer/research/">Research </a></li><?php endif; ?>
+                                                <?php if (Session::get('testing') == 'T'): ?><li><a href="<?php echo URL; ?>technicalOfficer/testing/">Testing </a></li><?php endif; ?>
+                                                <?php if (Session::get('drawing') == 'T'): ?> <li><a href="<?php echo URL; ?>technicalOfficer/drawing/">Drawing </a></li><?php endif; ?>
+                                                
+                                             <?php elseif (Session::get('logType') == 'J'): ?>
+                                                <li><a href="<?php echo URL; ?>juniorTechnicalOfficer">Home</a></li>
+                                                <?php if (Session::get('job') == 'T'): ?> <li><a href="<?php echo URL; ?>juniorTechnicalOfficer/job/">Display Job</a></li><?php endif; ?>
+                                                <li><a href="<?php echo URL; ?>juniorTechnicalOfficer/loginCreateChange/">Change Password </a></li>   
+                                                <?php if (Session::get('modify') == 'T'): ?> <li><a href="<?php echo URL; ?>juniorTechnicalOfficer/modify/">Modify</a></li><?php endif; ?>
+                                                <?php if (Session::get('jobAssign') == 'T'): ?><li><a href="<?php echo URL; ?>juniorTechnicalOfficer/jobAssign/">Assign Job  </a></li><?php endif; ?>
+                                               <?php if (Session::get('research') == 'T'): ?> <li><a href="<?php echo URL; ?>juniorTechnicalOfficer/research/">Research </a></li><?php endif; ?>
+                                                <?php if (Session::get('testing') == 'T'): ?><li><a href="<?php echo URL; ?>juniorTechnicalOfficer/testing/">Testing </a></li><?php endif; ?>
+                                                <?php if (Session::get('drawing') == 'T'): ?> <li><a href="<?php echo URL; ?>juniorTechnicalOfficer/drawing/">Drawing </a></li><?php endif; ?>
+                                                
+                                            <?php elseif (Session::get('logType') == 'C'): ?>
+                                                <li><a href="<?php echo URL; ?>contractBasis">Home</a></li>
+                                                <?php if (Session::get('job') == 'T'): ?> <li><a href="<?php echo URL; ?>contractBasis/job/">Display Job </a></li><?php endif; ?>
+                                                <li><a href="<?php echo URL; ?>contractBasis/loginCreateChange/">Modify Password </a></li>   
+                                                <?php if (Session::get('modify') == 'T'): ?> <li><a href="<?php echo URL; ?>contractBasis/modify/">Modify </a></li><?php endif; ?>
+                                                <?php if (Session::get('jobAssign') == 'T'): ?><li><a href="<?php echo URL; ?>contractBasis/jobAssign/">Assign Job  </a></li><?php endif; ?>
+                                               <?php if (Session::get('research') == 'T'): ?><li> <a href="<?php echo URL; ?>contractBasis/research/">Research </a></li><?php endif; ?>
+                                                <?php if (Session::get('testing') == 'T'): ?><li><a href="<?php echo URL; ?>contractBasis/testing/">Testing </a></li><?php endif; ?>
+                                                <?php if (Session::get('drawing') == 'T'): ?> <li><a href="<?php echo URL; ?>contractBasis/drawing/">Drawing</a></li><?php endif; ?>
+                                                
+                                            <?php endif; ?>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            
+                                        </div>
+				<ul>
+				
+			</nav>
+        </header>   
+		<div class="clear"></div>
+        <div id="content">
+            <div id="contentwrapper" >

@@ -1,0 +1,125 @@
+$(document).ready(function(){			
+	 		buildPage(5);
+	    	defColortable('tbody tr:odd td', 'odd');
+  			var filterControl='';
+ 	 	  	filterControl +=' &nbsp;<input type="search" id="filter" name="search" results="5"  placeholder="Search" >';
+  			$('#search').html(filterControl);
+  			
+ 				$('#tbody tr').addClass('found');
+ 				$('#search input').keyup(function(event){
+ 				//if esc enter or nothing enter
+ 				if(event.keyCode== 27 || $(this).val()== ''){
+	 			//if esc enter clear box
+	 			$(this).val('');
+	 			//display all rows 
+	  			$('#tbody tr').removeClass('found').show().addClass('found');
+	  			//rebuild page
+	  			buildPage(5);
+	  			//redisplay the pagination
+				$('.pagination').css('display','block');  
+				 }//if there is text
+			 else{
+			 filterRows('tbody tr',$(this).val());
+		 }
+	  });
+	});
+		
+	
+	
+	
+	function buildPage(pageSize)
+		{	
+		//no of rows
+		var numRows=$('tbody tr').size();
+		//no of pages
+		var numPages=Math.ceil(numRows/pageSize);
+	
+		if(numRows>pageSize){
+		//default values for current page
+		$('.currentPage').val(0);
+		$('.pageSize').val(pageSize);
+		//build pagination control
+		var paginationControl='';
+	
+			paginationControl ='<ul>'; 
+			paginationControl +='<a class="previousLink" href="javascript:previousPage();">&lsaquo;Previous</a></li>';
+	
+		for(var page=0;page<numPages; page++){
+		paginationControl +='<li>';
+		paginationControl +='<a class="pageLink" href="javascript:goToPage('+(page)+')">'+(page+1)+'</a>';
+		paginationControl +='</li>';
+		}
+		paginationControl +='<a class="previousLink" href="javascript:nextPage();">Next&rsaquo;</a></li>';
+		paginationControl +='</ul>';
+		//insert pagination control 
+		$('.pagination').html(paginationControl);	
+		
+		//set the default page size
+		$('#selectpageSize').val(pageSize);
+
+		$('.pagination .pageLink:first').addClass('activePage');
+	
+		//show the first page
+		$('tbody tr').hide().slice(0,pageSize).show();
+	
+	}
+}
+
+function defColortable(selector,className)
+{
+	$(selector).removeClass(className).addClass(className);
+}
+function previousPage(){
+	//get previous page
+	var previousPage=parseInt($('.currentPage').val())-1;
+	//go to previous page
+	if(previousPage>=0){
+		goToPage(previousPage);
+	}
+}
+function nextPage(){
+	//get next page
+	var nextPage=parseInt($('.currentPage').val())+1;
+	//go to previous page
+	var pageSize=$('.pageSize').val();
+	//get the number of rows
+	var numRows=$('tbody tr').size(); 
+	//get total number of pages
+	var numPage=Math.ceil(numRows/pageSize);
+	
+	if(nextPage<numPage){
+		goToPage(nextPage);
+	}
+}
+function goToPage(page){
+	//get page size
+	var pageSize=parseInt($('.pageSize').val());
+	//get first row
+	firstRow=page*pageSize;
+	//get last row
+	lastRow=firstRow+pageSize;
+	//hide all table rows and only corrent page
+	$('tbody tr').hide().slice(firstRow,lastRow).show();
+	//remove active page and show requested page
+	$('a.activepage').removeClass('activePage');
+	$('a.pageLink').eq(page).addClass('activePage');
+	//active the current page input field
+	$('.currentPage').val(page);
+}
+function filterRows(selector,query){
+	//hide the pagination
+	$('.pagination').css('display','none');
+	//get user input
+	query=$.trim(query);
+	query=query.replace(/ /gi,'|');
+	
+	//show match rows and hide athers
+	$(selector).each(function() {
+		if($(this).text().search(new RegExp(query,"i"))<0){
+			$(this).hide().removeClass('found');
+		}else{
+			$(this).show().addClass('found');
+		}
+        
+    });
+	}

@@ -1,0 +1,25 @@
+<html> 
+<script type="text/javascript" >
+$(document).ready(function(){
+	
+	
+	});
+</script>    
+    
+    <div id="login" class="glassborder">
+<h1>Login</h1>
+<form action="login/run" method="post" id="login_form">
+    <div class="textfield">
+        <input  type="text" name="user_name" value="User Name" onfocus="javascript:onfocusSet(this)" onblur="javascript:onblurSet(this)"/>
+    </div>
+    <div class="textfield">
+    <input  type="password" name="password" value="Password" onfocus="javascript:onfocusSet(this)" onblur="javascript:onblurSet(this)"/>
+    </div>
+     <div class="textfield">
+    <input  type="submit" value="Login"/>
+     </div>
+</form>
+    </div>
+</html>
+
+
