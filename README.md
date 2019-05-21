@@ -2,7 +2,7 @@
 https://youtu.be/_SJEG5sMQJA
 
 
-I forgot password, therefore executive below sql query after import database
+Executive below sql query after import database
 
 UPDATE system_user SET `password` = '1e6bdb9d266d9c4073b34cdfa174b635' WHERE `userName` = 'Admin';
 UPDATE system_user SET `password` = '1e6bdb9d266d9c4073b34cdfa174b635' WHERE `userName` = 'Kasun';
